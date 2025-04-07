@@ -73,6 +73,14 @@
     whitelist:
       components:
         - SecretStash
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 0.1
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 0.1
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]
