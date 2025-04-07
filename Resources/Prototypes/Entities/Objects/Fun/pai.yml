@@ -73,11 +73,7 @@
     whitelist:
       components:
         - SecretStash
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 0.1
-  - type: DamageOnLand
+  - type: DamageOtherOnHit  # Harmony change for comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
