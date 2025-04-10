@@ -73,10 +73,12 @@
     whitelist:
       components:
         - SecretStash
-  - type: DamageOtherOnHit  # Harmony change for comedic PAI pelting
+  # Start Harmony change for comedic PAI pelting
+  - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 0.1
+  # End Harmony Change
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]
