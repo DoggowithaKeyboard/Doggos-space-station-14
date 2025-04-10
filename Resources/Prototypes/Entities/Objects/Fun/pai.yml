@@ -73,7 +73,7 @@
     whitelist:
       components:
         - SecretStash
-  # Start Harmony change for comedic PAI pelting
+  # Start Harmony Change for comedic PAI pelting
   - type: DamageOtherOnHit
     damage:
       types:
