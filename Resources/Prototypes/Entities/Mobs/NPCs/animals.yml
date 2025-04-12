@@ -1368,6 +1368,16 @@
         Burn: 3
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  #start Harmony Change: thowable monkeys
+  - type: Item
+    size: Huge
+    # heldPrefix: 0 # Might fuck something up, comment out later if so (not sure yet, test later)
+  - type: StunOnCollide
+    knockdownAmount: 1
+  #end Harmony Change
+
+
+
 
 
 - type: entity
