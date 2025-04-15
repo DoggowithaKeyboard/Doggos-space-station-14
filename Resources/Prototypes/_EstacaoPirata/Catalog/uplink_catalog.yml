@@ -3,7 +3,12 @@
   name: uplink-syndicate-deck-name
   description: uplink-syndicate-deck-desc
   productEntity: CardBoxSyndicate
-  cost:
-    Telecrystal: 4 # Frontier: 1<4 (less spam please)
+  # Harmony Change Start: Made item free instead of 4 TC, one per uplink
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  # cost:
+  #  Telecrystal: 4 # Frontier: 1<4 (less spam please)
+  # Harmony Change End
   categories:
   - UplinkPointless
