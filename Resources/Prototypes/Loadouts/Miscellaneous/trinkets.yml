@@ -28,6 +28,19 @@
     back:
     - ClothingNeckHeadphones
 
+# Harmony Change: Cards
+- type: loadout
+  id: CardBoxNanotrasen
+  storage:
+    back:
+    - CardBoxNanotrasen
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+# End Harmony Change
+
 # Plushies
 - type: loadout
   id: PlushieLizard
