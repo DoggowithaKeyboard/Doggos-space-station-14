@@ -32,7 +32,7 @@
 
 # Frontier: base stack for card stack component
 - type: entity
-  parent: [BaseItem, RecyclableItemNoMats] # Frontier: added RecyclableItemNoMats
+  parent: [BaseItem] # Frontier: added RecyclableItemNoMats (removed on Harmony as it does not exist)
   id: CardStackBase
   name: stack of cards
   abstract: true
