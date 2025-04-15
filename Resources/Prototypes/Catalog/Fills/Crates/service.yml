@@ -20,6 +20,7 @@
       - id: Plunger
         amount: 2
       - id: BoxCleanerGrenades
+      - id: ToyRubberDuck # Harmony change. More ways to spawn duckies
 
 - type: entity
   id: CrateServiceReplacementLights
@@ -89,6 +90,7 @@
     contents:
     - id: ClothingUniformJumpskirtPerformer
     - id: ClothingShoesBootsPerformer
+    - id: ClothingHeadPerformerWig
     - id: ClothingOuterSuitMonkey
     - id: ClothingHeadHatAnimalMonkey
     - id: ClothingNeckCloakMoth
@@ -142,6 +144,7 @@
     - id: NewtonCradle
     - id: BoxEnvelope
     - id: BrbSign
+    - id: ClothingNeckLanyard #Harmony addition. Also obtainable through character loadouts and PTech vendor
 
 - type: entity
   id: CrateServiceFaxMachine

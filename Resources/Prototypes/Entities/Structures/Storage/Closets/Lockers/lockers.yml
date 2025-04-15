@@ -337,8 +337,10 @@
     stateBaseClosed: brigmedic
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
-  - type: AccessReader
-    access: [["Medical"]]
+# Start of Harmony Change: Removes Access Reader
+#  - type: AccessReader
+#    access: [["Medical"]]
+# End of Change
 
 # Security Officer
 - type: entity
@@ -364,6 +366,20 @@
     stateBaseClosed: shotguncase
     stateDoorOpen: shotguncase_open
     stateDoorClosed: shotguncase_door
+  - type: AccessReader
+  - type: Construction
+    graph: GunSafe
+    node: done
+    containers:
+    - entity_storage
+  - type: StaticPrice
+    price: 660
+
+- type: entity
+  id: GunSafeBaseSecure
+  parent: GunSafe
+  suffix: Armory, Locked
+  components:
   - type: AccessReader
     access: [["Armory"]]
 
@@ -407,6 +423,7 @@
   parent: LockerSyndicatePersonal
   description: Advanced locker technology.
   components:
+    - type: ArrivalsBlacklist
     - type: BluespaceLocker
       minBluespaceLinks: 1
       behaviorProperties:
