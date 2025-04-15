@@ -34,6 +34,19 @@
   storage:
     back:
     - PlushieLizard
+# Harmony Change Start: Cards
+- type: loadout
+  id: CardBoxNanotrasen
+  storage:
+    back:
+    - CardBoxNanotrasen
+
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+
 
 - type: loadout
   id: PlushieSpaceLizard
