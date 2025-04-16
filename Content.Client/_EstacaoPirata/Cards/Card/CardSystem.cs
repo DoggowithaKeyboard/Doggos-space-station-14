@@ -1,3 +1,7 @@
+/// Original Code by Day-OS and VictorJob from Estacao Pirata at commit 4cc2257
+/// Available at https://github.com/estacao-pirata/estacao-pirata/blob/4cc22579c59061d09c0b8b6b79c7dfd192540374/Content.Client/_EstacaoPirata/Cards/Card/CardSystem.cs
+/// Various fixes and improvements by RadsammyT, VMSolidus, whatston3 and dvir001 from GoobStation, Einstien Engines, and Frontier
+/// Ported over by DoggowithaKeyboard with the help of the Harmony and Wizden Server
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Robust.Client.GameObjects;
