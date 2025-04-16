@@ -62,8 +62,8 @@
     interfaces:
       enum.CardUiKey.Key:
         type: CardHandMenuBoundUserInterface
-  # - type: ActivatableUI # Frontier
-  #   key: enum.CardUiKey.Key # Frontier
+  - type: ActivatableUI
+    key: enum.CardUiKey.Key
 
 - type: entity
   parent: CardStackBase
