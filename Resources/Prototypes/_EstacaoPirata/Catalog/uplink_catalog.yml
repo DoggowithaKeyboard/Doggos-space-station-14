@@ -7,8 +7,8 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  # End Harmony Change
   cost:
     Telecrystal: 4 # Frontier: 1<4 (less spam please)
-  # End Harmony Change
   categories:
   - UplinkPointless
