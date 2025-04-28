@@ -33,11 +33,6 @@
   storage:
     back:
     - CardBoxBlack
-- type: loadout
-  id: CardBoxNanotrasen
-  storage:
-    back:
-    - CardBoxNanotrasen
 # End Harmony Change
 # Toys
 - type: loadout

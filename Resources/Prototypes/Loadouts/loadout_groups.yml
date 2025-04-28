@@ -9,7 +9,6 @@
   - Hairflower
   - Headphones
   # Harmony Change Start: CardsPort
-  - CardBoxNanotrasen
   - CardBoxBlack
   # Harmony Change End
   - PlushieLizard
@@ -1151,7 +1150,7 @@
   - DetectiveBlueCoatHarmony # Harmony
   - DetectiveBomberCoatHarmony # Harmony
   - DetectiveDiscoCoatHarmony # Harmony
- 
+
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
