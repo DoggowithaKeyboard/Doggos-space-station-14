@@ -8,7 +8,6 @@
   - FlowerWreath
   - Hairflower
   - Headphones
-  - CardBoxBlack # Harmony Change: Playing Card Port
   - PlushieLizard
   - PlushieSpaceLizard
   - ThreeCandles
@@ -1148,7 +1147,7 @@
   - DetectiveBlueCoatHarmony # Harmony
   - DetectiveBomberCoatHarmony # Harmony
   - DetectiveDiscoCoatHarmony # Harmony
-
+ 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
