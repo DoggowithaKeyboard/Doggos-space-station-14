@@ -50,6 +50,21 @@
     node: cigarette
 
 - type: entity
+  id: CigaretteEmpty
+  suffix: Empty
+  parent: Cigarette
+  name: cigarette
+  description: A roll of filter and paper, used for custom smokes.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+  - type: Construction
+    graph: emptyCigarette
+    node: cigarette
+
+- type: entity
   id: CigaretteSpent
   parent: Cigarette
   suffix: spent
