@@ -27,7 +27,7 @@
   storage:
     back:
     - ClothingNeckHeadphones
-# Harmony Change: Playing Cards
+# Harmony Change Start: CardsPort
 - type: loadout
   id: CardBoxBlack
   storage:
