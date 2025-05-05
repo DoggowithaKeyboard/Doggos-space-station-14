@@ -33,6 +33,7 @@
         - GPS
         - WeldingMask
       components:
+        - StationMap
         - SprayPainter
         - NetworkConfigurator
         - RCD
@@ -112,6 +113,7 @@
         - Multitool
         - AppraisalTool
       components:
+        - StationMap
         - SprayPainter
         - NetworkConfigurator
         - RCD
@@ -456,7 +458,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseRestrictedContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSecurityContraband]
   id: ClothingBeltSecurity
   name: security belt
   description: Can hold security gear like handcuffs and flashes.
@@ -465,6 +467,8 @@
     sprite: Clothing/Belt/security.rsi
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
   - type: Storage
     whitelist:
       tags:
@@ -477,6 +481,8 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
+        - HandGrenade
+        - EnergyCartridge # Harmony Change: Adds the Energy Cartridge to the sec belt whitelist
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -488,6 +494,7 @@
         - DoorRemote
         - Whistle
         - BalloonPopper
+        - Ensnaring #Harmony Change: Allows Bolas into Security Belts, intended for Security Bolas.
   - type: ItemMapper
     mapLayers:
       flashbang:
@@ -540,7 +547,10 @@
 # Belts without visualizers
 
 - type: entity
-  parent: [ClothingBeltAmmoProviderBase, BaseRestrictedContraband]
+# Start of Harmony Change: Updates Bandolier's Parents
+#  parent: [ClothingBeltAmmoProviderBase, BaseSecurityBartenderContraband]
+  parent: [ClothingBeltStorageBase, BaseSecurityBartenderContraband]
+# End of Harmony Change
   id: ClothingBeltBandolier
   name: bandolier
   description: A bandolier for holding shotgun ammunition.
@@ -551,11 +561,19 @@
     sprite: Clothing/Belt/bandolier.rsi
   - type: Item
     size: Huge
-  - type: BallisticAmmoProvider
+# Start of Harmony Change: Makes the Bandolier have Storage Slots
+#  - type: BallisticAmmoProvider
+#    whitelist:
+#      tags:
+#        - ShellShotgun
+#    capacity: 14
+  - type: Storage
+    grid:
+    - 0,0,6,1
     whitelist:
       tags:
         - ShellShotgun
-    capacity: 14
+# End of Harmony Change
 
 - type: entity
   parent: ClothingBeltBase
@@ -652,7 +670,7 @@
   - type: Clothing
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -696,7 +714,7 @@
     sprite: Clothing/Belt/suspenders_black.rsi
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ ClothingBeltStorageBase, BaseMagicalContraband ]
   id: ClothingBeltWand
   name: wand belt
   description: A belt designed to hold various rods of power. A veritable fanny pack of exotic magic.

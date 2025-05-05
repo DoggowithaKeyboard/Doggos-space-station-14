@@ -243,7 +243,7 @@ public sealed partial class ShuttleSystem
             }
         }
 
-        if (HasComp<PreventPilotComponent>(shuttleUid))
+        if (HasComp<PreventPilotComponent>(shuttleUid) || HasComp<PreventFTLComponent>(shuttleUid))
         {
             reason = Loc.GetString("shuttle-console-prevent");
             return false;
@@ -330,6 +330,13 @@ public sealed partial class ShuttleSystem
         {
             hyperspace.TargetCoordinates = config.Coordinates;
             hyperspace.TargetAngle = config.Angle;
+            // Harmony - Mark the docks as queued for a docking
+            config.Docks.ForEach(x =>
+            {
+                x.DockA.QueuedDocked = true;
+                x.DockB.QueuedDocked = true;
+            });
+            // End harmony
         }
         else if (TryGetFTLProximity(shuttleUid, new EntityCoordinates(target, Vector2.Zero), out var coords, out var targAngle))
         {
@@ -364,8 +371,6 @@ public sealed partial class ShuttleSystem
         var audio = _audio.PlayPvs(_startupSound, uid);
         _audio.SetGridAudio(audio);
         component.StartupStream = audio?.Entity;
-
-        // TODO: Play previs here for docking arrival.
 
         // Make sure the map is setup before we leave to avoid pop-in (e.g. parallax).
         EnsureFTLMap();
@@ -450,7 +455,8 @@ public sealed partial class ShuttleSystem
 
         if (entity.Comp1.VisualizerProto != null)
         {
-            comp.VisualizerEntity = SpawnAtPosition(entity.Comp1.VisualizerProto, entity.Comp1.TargetCoordinates);
+            comp.VisualizerEntity = SpawnAttachedTo(entity.Comp1.VisualizerProto, entity.Comp1.TargetCoordinates);
+            DebugTools.Assert(Transform(comp.VisualizerEntity.Value).ParentUid == entity.Comp1.TargetCoordinates.EntityId);
             var visuals = Comp<FtlVisualizerComponent>(comp.VisualizerEntity.Value);
             visuals.Grid = entity.Owner;
             Dirty(comp.VisualizerEntity.Value, visuals);
@@ -513,6 +519,13 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
+                // Harmony - Mark the docks as unqueued
+                config.Docks.ForEach(x =>
+                {
+                    x.DockA.QueuedDocked = false;
+                    x.DockB.QueuedDocked = false;
+                });
+                // End Harmony
             }
 
             mapId = mapCoordinates.MapId;
@@ -756,7 +769,7 @@ public sealed partial class ShuttleSystem
         // Set position
         var mapCoordinates = _transform.ToMapCoordinates(config.Coordinates);
         var mapUid = _mapSystem.GetMap(mapCoordinates.MapId);
-        _transform.SetCoordinates(shuttle.Owner, shuttle.Comp, new EntityCoordinates(mapUid, mapCoordinates.Position), rotation: config.Angle);
+        _transform.SetCoordinates(shuttle.Owner, shuttle.Comp, new EntityCoordinates(mapUid, mapCoordinates.Position), rotation: config.Angle + _transform.GetWorldRotation(config.Coordinates.EntityId));
 
         // Connect everything
         foreach (var (dockAUid, dockBUid, dockA, dockB) in config.Docks)
