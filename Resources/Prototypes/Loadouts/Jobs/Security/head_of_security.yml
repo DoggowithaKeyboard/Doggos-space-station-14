@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 10800 #20 hrs
+      time: 16200 # harmony: 20 hrs -> 4.5 hrs (~3 rounds)
 
 # Jumpsuit
 - type: loadout
@@ -20,12 +20,12 @@
     jumpsuit: ClothingUniformJumpskirtHoS
 
 - type: loadout
-  id: HeadofSecurityTurtleneck
+  id: HeadofSecurityAssaultSuit # Harmony Change: Updated ID for HoS Clothing and Loadout Update. Old ID: HeadofSecurityTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSAlt
 
 - type: loadout
-  id: HeadofSecurityTurtleneckSkirt
+  id: HeadofSecurityAssaultSkirt # Harmony Change: Updated ID for HoS Clothing and Loadout Update. Old ID: HeadofSecurityTurtleneckSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSAlt
 

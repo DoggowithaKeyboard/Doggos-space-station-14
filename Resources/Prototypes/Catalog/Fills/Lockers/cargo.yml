@@ -15,8 +15,12 @@
     - id: SurvivalKnife
     - id: HandheldGPSBasic
     - id: RadioHandheld
+    - id: SeismicCharge # Harmony change
     - id: AppraisalTool
-    - id: FireExtinguisher
+# Start of Harmony Change: Replaces the Fire Extinguisher with a minijetpack
+#    - id: FireExtinguisher
+    - id: JetpackMiniFilled
+# End of Harmony Change
     - id: Flare
       prob: 0.3
       rolls: !type:ConstantNumberSelector

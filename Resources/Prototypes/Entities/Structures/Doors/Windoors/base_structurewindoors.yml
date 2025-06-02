@@ -25,7 +25,10 @@
         layer:
         - GlassAirlockLayer
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -43,11 +46,16 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.HUD"]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Sparks"]
   - type: AnimationPlayer
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
@@ -142,6 +150,12 @@
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ElectrifiedVisuals.ShowSparks:
+        enum.ElectrifiedLayers.Sparks:
+          True: { visible: True }
+          False: { visible: False }
   - type: WiresVisuals
   - type: ElectrocutionHUDVisuals
   - type: Airtight
@@ -163,7 +177,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed
@@ -183,11 +200,16 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
       map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
   - type: Damageable
     damageModifierSet: RGlass
   - type: Destructible
@@ -230,7 +252,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -249,11 +274,16 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
       map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
   - type: Destructible
     thresholds:
     - trigger:
@@ -290,7 +320,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed
@@ -310,11 +343,16 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
-      map: ["enum.ElectrifiedLayers.HUD"]
+      map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
   - type: Destructible
     thresholds:
     - trigger:
@@ -357,7 +395,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
+# End of Harmony Change
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -376,11 +417,16 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
       map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
   - type: Destructible
     thresholds:
     - trigger:
@@ -417,7 +463,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: closed
@@ -437,11 +486,16 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
-    - state: electrified
+    - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
       shader: unshaded
       visible: false
       map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
   - type: Destructible
     thresholds:
     - trigger:
